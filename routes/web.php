@@ -30,14 +30,19 @@ Route::middleware([
         $books = Book::orderBy('created_at', 'asc')->paginate(15);
         return view('book.index', compact('books', 'categories'));
     })->name('dashboard');
+    Route::get('book/manager', [BookController::class, 'show'])->name('manager');
+    Route::post('book/manager/add', [BookController::class, 'store'])->name('add');
+    Route::get('book/manager/edit/{id}', [BookController::class, 'edit'])->name('edit');
+    Route::post('book/manager/update/{id}',[BookController::class, 'update'])->name('update');
+    Route::delete('book/manager/delete/{id}',[BookController::class, 'destroy'])->name('delete');
 });
 
 Route::get('book', [BookController::class, 'index'])->name('book');
-Route::get('book/manager', [BookController::class, 'show'])->name('manager')->middleware(Authenticate::class);
-Route::post('book/manager/add', [BookController::class, 'store'])->name('add')->middleware(Authenticate::class);
-Route::get('book/manager/edit/{id}', [BookController::class, 'edit'])->name('edit')->middleware(Authenticate::class);
-Route::post('book/manager/update/{id}',[BookController::class, 'update'])->name('update')->middleware(Authenticate::class);
-Route::delete('book/manager/delete/{id}',[BookController::class, 'destroy'])->name('delete')->middleware(Authenticate::class);
+//Route::get('book/manager', [BookController::class, 'show'])->name('manager')->middleware(Authenticate::class);
+//Route::post('book/manager/add', [BookController::class, 'store'])->name('add')->middleware(Authenticate::class);
+//Route::get('book/manager/edit/{id}', [BookController::class, 'edit'])->name('edit')->middleware(Authenticate::class);
+//Route::post('book/manager/update/{id}',[BookController::class, 'update'])->name('update')->middleware(Authenticate::class);
+//Route::delete('book/manager/delete/{id}',[BookController::class, 'destroy'])->name('delete')->middleware(Authenticate::class);
 Route::get('book/manager/detail/{id}',[BookController::class, 'detail'])->name('detail');
 Route::get('book-ajax', [BookController::class, 'pagination'])->name('book-ajax');
 Route::get('manager-ajax', [BookController::class, 'paginationManager'])->name('manager-ajax');

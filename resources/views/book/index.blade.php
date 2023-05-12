@@ -12,6 +12,7 @@
 </head>
 <x-app-layout>
     <body>
+    {{--Live search--}}
     <script>
         $(document).on('keyup', function (e){
             e.preventDefault();
@@ -29,25 +30,7 @@
     @include('header')
     <section class="py-5 ">
         <div class="container px-4 px-lg-5 mt-5">
-{{--            <form method="GET">--}}
-{{--                <div class="input-group mb-3">--}}
-{{--                    <input--}}
-{{--                        type="text"--}}
-{{--                        name="search"--}}
-{{--                        value="{{ request()->get('search') }}"--}}
-{{--                        class="form-control"--}}
-{{--                        placeholder="Search..."--}}
-{{--                        aria-label="Search"--}}
-{{--                        aria-describedby="button-addon2">--}}
-{{--                    <button class="btn btn-success" type="submit" id="button-addon2">Search</button>--}}
-{{--                </div>--}}
-{{--            </form>--}}
-            <input type="text" name="search" id="search" class="mb-4 form-control" placeholder="Search here...">
-{{--            <div align="center">--}}
-{{--                @foreach($categories as $category)--}}
-{{--                    <button class="btn btn-primary filter-button " data-filter="all">{{$category->name}}</button>--}}
-{{--                @endforeach--}}
-{{--            </div>--}}
+            <input type="text" name="search" id="search" class="mb-4 form-control" style="height: 50px; border-radius: 20px; border-color: #57b846" placeholder="Search here...">
             <hr>
             <div id="table_data" class="row gx-5 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" style="position: relative;">
                 @include('book/pagination_books')

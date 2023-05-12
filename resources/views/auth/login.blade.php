@@ -27,7 +27,7 @@
 <div class="wrap-login100">
     <div class="login100-pic js-tilt" data-tilt>
         <a href="{{ route('book') }}">
-            <img class="logo" src="/admin/asset/logo.png" alt="">
+            <img class="logo" src="/admin/asset/logo.png" alt="" style="width: 90px">
         </a> <img src="admin/asset/Group 3653.png" alt="IMG">
         <div class="cpr text-center p-t-180">Copyright Reserved @2021</div>
     </div>

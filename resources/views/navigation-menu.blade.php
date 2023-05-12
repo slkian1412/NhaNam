@@ -1,6 +1,6 @@
 <nav x-data="{ open: false }" class="border-b border-gray-100">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style="font-size: 50px !important;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style="font-size: 40px !important;">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
@@ -12,10 +12,10 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-11 sm:flex">
-                    <x-nav-link href="{{ route('book') }}" :active="request()->routeIs('book')" style="font-size: 20px !important;color: #0c4128">
+                    <x-nav-link href="{{ route('book') }}" :active="request()->routeIs('book')" style="font-size: 18px !important;color: #0c4128">
                         {{ __('Trang chủ') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('manager') }}" :active="request()->routeIs('manager', 'edit')" style="font-size: 20px !important; color: #0c4128">
+                    <x-nav-link href="{{ route('manager') }}" :active="request()->routeIs('manager', 'edit')" style="font-size: 18px !important; color: #0c4128">
                         {{ __('Quản lý') }}
                     </x-nav-link>
                 </div>
@@ -137,7 +137,7 @@
                         </x-dropdown>
                     </div>
                 @else
-                    <x-nav-link href="{{ route('login') }}" style="font-size: 20px !important;">
+                    <x-nav-link href="{{ route('login') }}" style="font-size: 18px !important;">
                         {{ __('Đăng nhập') }}
                     </x-nav-link>
                 @endif
